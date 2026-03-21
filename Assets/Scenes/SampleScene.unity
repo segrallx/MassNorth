@@ -441,7 +441,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1881566824}
-  - component: {fileID: 1881566823}
+  - component: {fileID: 1881566825}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -449,24 +449,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1881566823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1881566822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d65d88760ff64fce89045f6583ec198, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FormationRenderer
-  rows: 5
-  cols: 8
-  spacing: 0.6
-  soldierMaterial: {fileID: 0}
-  teamColor: {r: 0.2, g: 0.4, b: 0.9, a: 1}
-  animateWalk: 1
 --- !u!4 &1881566824
 Transform:
   m_ObjectHideFlags: 0
@@ -482,6 +464,27 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1881566825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881566822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41c5ea84de21149e285124d766aa5023, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnightFormationRenderer
+  rows: 1
+  cols: 1
+  spacing: 0.8
+  knightMesh: {fileID: 0}
+  knightMaterial: {fileID: 0}
+  vatData: {fileID: 0}
+  vatTexture: {fileID: 0}
+  teamColor: {r: 0.3, g: 0.5, b: 1, a: 1}
+  animState: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
