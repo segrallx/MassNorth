@@ -270,7 +270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SquadCamera
   squad: {fileID: 1881566825}
-  offset: {x: 0, y: 10, z: -8}
   smoothSpeed: 5
 --- !u!1 &410087039
 GameObject:
@@ -465,7 +464,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 4f3ce0998c58c4a22871e4f990193ab8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -610,9 +609,9 @@ MonoBehaviour:
   rows: 4
   cols: 4
   spacing: 0.5
-  armorColor: {r: 0.3996743, g: 0.7264151, b: 0.14048593, a: 1}
-  skinColor: {r: 0.8301887, g: 0.512994, b: 0.7236264, a: 1}
-  bootsColor: {r: 0.42653042, g: 0.41585082, b: 0.8396226, a: 1}
+  armorColor: {r: 0.5424751, g: 0.764151, b: 0.32079923, a: 1}
+  skinColor: {r: 0.9056604, g: 0.5596298, b: 0.7903168, a: 1}
+  bootsColor: {r: 0.8578354, g: 0.8537736, b: 1, a: 1}
   swordOffset: {x: 0, y: 0, z: 0}
   swordRotation: {x: 0, y: 90, z: 0}
   moveSpeed: 10

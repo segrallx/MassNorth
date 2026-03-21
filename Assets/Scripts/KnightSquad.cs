@@ -430,9 +430,16 @@ public class KnightSquad : MonoBehaviour, IFormationRenderer
         {
             string matName = materials[i] != null ? materials[i].name : "";
             Color col;
+            // 先按材质名匹配，再按索引兜底（FBX 子材质顺序：0=Armor, 1=Skin, 2=Boots）
             if (matName.Contains("Skin"))
                 col = skinColor;
             else if (matName.Contains("Boot"))
+                col = bootsColor;
+            else if (matName.Contains("Armor") || matName.Contains("armor"))
+                col = armorColor;
+            else if (i == 1)
+                col = skinColor;
+            else if (i == 2)
                 col = bootsColor;
             else
                 col = armorColor;
