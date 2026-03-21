@@ -152,6 +152,41 @@ public static class VATBaker
         AssetDatabase.CreateAsset(vatData, dataPath);
         Debug.Log($"VAT 元数据已保存: {dataPath}");
 
+        // 9. 创建预配置材质（如果还不存在则新建，已存在则只更新 VAT 相关参数保留用户调色）
+        string matPath = $"{OutputDir}/KnightMaterial.mat";
+        var existingMat = AssetDatabase.LoadAssetAtPath<Material>(matPath);
+        if (existingMat == null)
+        {
+            var shader = Shader.Find("MassNorth/InstancedKnight");
+            if (shader != null)
+            {
+                var mat = new Material(shader);
+                mat.enableInstancing = true;
+                mat.SetTexture("_VATTex", AssetDatabase.LoadAssetAtPath<Texture2D>(exrPath));
+                mat.SetFloat("_TotalFrames", totalFrames);
+                mat.SetFloat("_FPS", BakeFPS);
+                mat.SetFloat("_WalkStart", walkStart);
+                mat.SetFloat("_WalkCount", walkFrames);
+                mat.SetFloat("_AttackStart", attackStart);
+                mat.SetFloat("_AttackCount", attackFrames);
+                AssetDatabase.CreateAsset(mat, matPath);
+                Debug.Log($"材质已创建: {matPath}（可在 Inspector 中调整颜色，改动会自动保存）");
+            }
+        }
+        else
+        {
+            // 材质已存在 — 只更新 VAT 数据，保留用户调过的颜色
+            existingMat.SetTexture("_VATTex", AssetDatabase.LoadAssetAtPath<Texture2D>(exrPath));
+            existingMat.SetFloat("_TotalFrames", totalFrames);
+            existingMat.SetFloat("_FPS", BakeFPS);
+            existingMat.SetFloat("_WalkStart", walkStart);
+            existingMat.SetFloat("_WalkCount", walkFrames);
+            existingMat.SetFloat("_AttackStart", attackStart);
+            existingMat.SetFloat("_AttackCount", attackFrames);
+            EditorUtility.SetDirty(existingMat);
+            Debug.Log($"材质已更新 VAT 参数: {matPath}（颜色保持不变）");
+        }
+
         // 清理
         Object.DestroyImmediate(go);
         Object.DestroyImmediate(bindPoseMesh);

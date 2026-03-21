@@ -95,6 +95,9 @@ public class KnightFormationRenderer : MonoBehaviour
         if (knightMesh == null)
             knightMesh = UnityEditor.AssetDatabase.LoadAssetAtPath<Mesh>($"{dir}/KnightBindPose.asset");
 
+        if (knightMaterial == null)
+            knightMaterial = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>($"{dir}/KnightMaterial.mat");
+
         if (vatData == null)
             vatData = UnityEditor.AssetDatabase.LoadAssetAtPath<KnightVATData>($"{dir}/KnightVATData.asset");
 
